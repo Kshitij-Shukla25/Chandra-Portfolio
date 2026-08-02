@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Barlow_Condensed, Inter } from 'next/font/google';
 import './globals.css';
 import { getSettings } from '@/lib/actions/settings';
+import SplashCursor from '@/components/ui/SplashCursor';
 
 /* Heavy condensed for the giant hero type */
 const barlowCondensed = Barlow_Condensed({
@@ -58,6 +59,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         style={{ fontFamily: 'var(--font-body), system-ui, sans-serif' }}
       >
         {children}
+        <SplashCursor
+          DENSITY_DISSIPATION={3.5}
+          VELOCITY_DISSIPATION={2}
+          SPLAT_RADIUS={0.25}
+          SPLAT_FORCE={6000}
+          CURL={3}
+          RAINBOW_MODE={true}
+          TRANSPARENT={true}
+        />
       </body>
     </html>
   );
