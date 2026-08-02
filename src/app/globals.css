@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 10 10 12;
+    --foreground: 250 250 250;
+    --card: 18 18 22;
+    --border: 38 38 46;
+    --muted-foreground: 140 140 150;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: rgb(10 10 12);
+    color: rgb(250 250 250);
+  }
+
+  ::selection {
+    background-color: rgba(255,255,255,0.12);
+  }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: rgb(10 10 12); }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 3px; }
+}
+
+@layer utilities {
+  /* Outlined / stroked text — matches the "MANI" style in the design */
+  .text-outline {
+    -webkit-text-stroke: 2px rgb(250 250 250);
+    color: transparent;
+  }
+
+  .text-outline-sm {
+    -webkit-text-stroke: 1.5px rgba(250,250,250,0.85);
+    color: transparent;
+  }
+
+  /* Ticker animation */
+  .animate-ticker {
+    animation: ticker 35s linear infinite;
+  }
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* Blue radial glow — matches top-right area in image */
+  .hero-glow {
+    background: radial-gradient(
+      ellipse 55% 70% at 85% 40%,
+      rgba(30, 60, 140, 0.35) 0%,
+      rgba(10, 30, 90, 0.15) 50%,
+      transparent 100%
+    );
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
