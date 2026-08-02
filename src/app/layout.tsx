@@ -59,15 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         style={{ fontFamily: 'var(--font-body), system-ui, sans-serif' }}
       >
         {children}
-        <SplashCursor
-          DENSITY_DISSIPATION={3.5}
-          VELOCITY_DISSIPATION={2}
-          SPLAT_RADIUS={0.25}
-          SPLAT_FORCE={6000}
-          CURL={3}
-          RAINBOW_MODE={true}
-          TRANSPARENT={true}
-        />
+        <SplashCursor />
       </body>
     </html>
   );
